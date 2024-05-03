@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  html {
+    font-family: "Josefin Sans", system-ui, sans-serif;
+  }
+}
+body{
+  @apply flex justify-center
+  lg:bg-desktop-hero-pattern
+  md:bg-desktop-hero-pattern
+  bg-mobile-hero-pattern
+  dark:lg:bg-desktop-hero-pattern-dark
+  dark:md:bg-desktop-hero-pattern-dark
+  dark:bg-mobile-hero-pattern-dark
+  bg-[length:100%_250px]
+  bg-no-repeat
+  dark:bg-veryDarkBlueDark
+}
+
+#custom-checkbox:checked + label {
+  background-image: url('src/assets/icon-check.svg');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid transparent;
+}
