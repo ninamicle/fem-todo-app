@@ -25,7 +25,7 @@ const [todoItems, setTodoItems] = useState<Todo[]>(TODOS)
     }
 
   return (
-      <div className="flex flex-col gap-y-5 mt-16 px-2">
+      <div className="flex flex-col gap-y-5 mt-16">
           <div className="flex justify-between items-center text-veryLightGray">
               <h1 className="font-bold text-white tracking-[1rem] text-2xl">TODO</h1>
               <div className="font-bold text-white w-6 h-6">
