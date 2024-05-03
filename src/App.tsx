@@ -5,16 +5,7 @@ import {Todo} from "./models/Todo.ts";
 import Todos from "./components/Todos.tsx";
 import {useState} from "react";
 
-let TODOS: Todo[] = [
-    {  id: '1',
-        text: 'Finire la todo app',
-        completed: true
-    },
-    {  id: '2',
-        text: 'Rispettare le linee guida',
-        completed: false
-    }
-]
+let TODOS: Todo[] = []
 function App() {
 const [todoItems, setTodoItems] = useState<Todo[]>(TODOS)
  const addTodo =(text: string) => {
