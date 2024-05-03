@@ -1,7 +1,7 @@
 import React from "react";
 import {Todo} from "../models/Todo.ts";
 import {useSortable} from "@dnd-kit/sortable";
-
+import checkImg from "/icon-check.svg"
 interface TodoItemProps{
     todo: Todo;
     toggleTodo: (id: string) => void;
@@ -25,7 +25,7 @@ const TodoItem:React.FC<TodoItemProps> = ({todo, toggleTodo}) => {
                          onClick={() => {
                              return toggleTodo(todo.id)
                          }}>
-                        <img className="w-4 h-4" src="src/assets/icon-check.svg" alt="Todo status"/>
+                        <img className="w-4 h-4" src={checkImg} alt="Todo status"/>
                     </div>
                     :
                     <div

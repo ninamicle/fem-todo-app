@@ -18,10 +18,3 @@ body{
   bg-no-repeat
   dark:bg-veryDarkBlueDark
 }
-
-#custom-checkbox:checked + label {
-  background-image: url('src/assets/icon-check.svg');
-  background-size: cover;
-  background-position: center;
-  border: 2px solid transparent;
-}

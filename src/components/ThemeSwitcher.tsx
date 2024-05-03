@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+import iconMoon from "/icon-moon.svg"
+import iconSun from "/icon-sun.svg"
 
 type Theme = "light"|"dark"
 export default function ThemeSwitcher(){
@@ -34,9 +36,9 @@ export default function ThemeSwitcher(){
     return (
         <button className="hover:scale-[1.15] transition-all" onClick={()=> toggleTheme()}>
             {theme === "light" ?
-                <img className="w-full h-full" src={'src/assets/icon-moon.svg'} alt="Activate dark mode"/>
+                <img className="w-full h-full" src={iconMoon} alt="Activate dark mode"/>
                 :
-                <img className="w-full h-full" src={'src/assets/icon-sun.svg'} alt="Activate ligth mode"/>
+                <img className="w-full h-full" src={iconSun} alt="Activate ligth mode"/>
             }
         </button>
     )

@@ -25,10 +25,10 @@ export default {
 
       backgroundImage: {
         checkBackground: 'linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%))',
-        'desktop-hero-pattern': "url('src/assets/bg-desktop-light.jpg')",
-        'desktop-hero-pattern-dark': "url('src/assets/bg-desktop-dark.jpg')",
-        'mobile-hero-pattern': "url('src/assets/bg-mobile-light.jpg')",
-        'mobile-hero-pattern-dark': "url('src/assets/bg-mobile-dark.jpg')",
+        'desktop-hero-pattern': "url('/bg-desktop-light.jpg')",
+        'desktop-hero-pattern-dark': "url('/bg-desktop-dark.jpg')",
+        'mobile-hero-pattern': "url('/bg-mobile-light.jpg')",
+        'mobile-hero-pattern-dark': "url('/bg-mobile-dark.jpg')",
       }
     },
   },
