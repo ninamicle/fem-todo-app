@@ -21,10 +21,10 @@ const TodoItem:React.FC<TodoItemProps> = ({todo, toggleTodo}) => {
     return (
         <div
             ref={setNodeRef} style={style ? style : undefined} {...attributes} {...listeners}
-            className="flex dark:text-lightGrayishBlue text-veryDarkDesaturatedBlueDark gap-4 items-center touch-none">
+            className="flex dark:text-lightGrayishBlue text-veryDarkDesaturatedBlueDark gap-4 items-center">
             <div className="hover:bg-checkBackground dark:bg-veryDarkGrayishBlueDarker bg-lightGrayishBlue rounded-full p-[1px] cursor-pointer">
                 {todo.completed ?
-                    <div className="flex justify-center items-center bg-checkBackground w-6 h-6  rounded-full"
+                    <div className="flex justify-center items-center bg-checkBackground w-6 h-6  rounded-full  touch-none"
                          onClick={() => {
                              return toggleTodo(todo.id)
                          }}>
