@@ -31,8 +31,7 @@ const Todos: React.FC<TodosProps> =({todos, updateTodo, cleaCompleted, setTodos}
     }
     const pointerSensor = useSensor(PointerSensor, {
         activationConstraint: {
-            delay: 200,
-            distance: 10
+            distance: 0.1
         }
     });
     const touchSensor = useSensor(TouchSensor);

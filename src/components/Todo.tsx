@@ -1,6 +1,9 @@
 import React from "react";
 import {Todo} from "../models/Todo.ts";
 import {useSortable} from "@dnd-kit/sortable";
+import type { CSSProperties } from "react";
+import {CSS} from "@dnd-kit/utilities";
+
 import checkImg from "/icon-check.svg"
 interface TodoItemProps{
     todo: Todo;
@@ -11,9 +14,9 @@ const TodoItem:React.FC<TodoItemProps> = ({todo, toggleTodo}) => {
     const { attributes, listeners, setNodeRef, transform,isDragging } = useSortable({
         id: todo.id
     });
-    const style =transform && {
-        transform:`translate3d(${transform.x}px, ${transform.y}px, 0)`,
+    const style: CSSProperties = {
         zIndex: isDragging ? 1 : 'auto',
+        transform: CSS.Translate.toString(transform),
     };
     return (
         <div

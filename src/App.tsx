@@ -5,11 +5,10 @@ import {Todo} from "./models/Todo.ts";
 import Todos from "./components/Todos.tsx";
 import {useState} from "react";
 
-let TODOS: Todo[] = []
 function App() {
-const [todoItems, setTodoItems] = useState<Todo[]>(TODOS)
+const [todoItems, setTodoItems] = useState<Todo[]>([])
  const addTodo =(text: string) => {
-   setTodoItems( [...todoItems, {id: new Date().toString(), text: text, completed: false } as Todo])
+   setTodoItems( [...todoItems, {id: new Date().toTimeString(), text: text, completed: false } as Todo])
     }
  const updateTodo =(updatedTodo:Todo) => {
     const updatedTodos = [...todoItems];
@@ -20,7 +19,6 @@ const [todoItems, setTodoItems] = useState<Todo[]>(TODOS)
     }
     const cleaCompleted = () => {
         const updatedTodos = todoItems.filter(todo => !todo.completed);
-        TODOS = updatedTodos;
         setTodoItems(updatedTodos);
     }
 
