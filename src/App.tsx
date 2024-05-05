@@ -3,14 +3,15 @@ import ThemeSwitcher from "./components/ThemeSwitcher.tsx";
 import AddTodo from "./components/AddTodo.tsx";
 import {Todo} from "./models/Todo.ts";
 import Todos from "./components/Todos.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 function App() {
-const [todoItems, setTodoItems] = useState<Todo[]>([])
- const addTodo =(text: string) => {
-   setTodoItems( [...todoItems, {id: new Date().toTimeString(), text: text, completed: false } as Todo])
+    const todos =JSON.parse(localStorage.todos);
+    const [todoItems, setTodoItems] = useState<Todo[]>(todos as unknown as Todo[])
+    const addTodo =(text: string) => {
+        setTodoItems([{id: new Date().toTimeString(), text: text, completed: false }, ...todoItems])
     }
- const updateTodo =(updatedTodo:Todo) => {
+    const updateTodo =(updatedTodo:Todo) => {
     const updatedTodos = [...todoItems];
     const index = updatedTodos.findIndex(todo => todo.id === updatedTodo.id);
     const updatedTodoItem = { ...updatedTodos[index] };
@@ -21,6 +22,11 @@ const [todoItems, setTodoItems] = useState<Todo[]>([])
         const updatedTodos = todoItems.filter(todo => !todo.completed);
         setTodoItems(updatedTodos);
     }
+    useEffect(() => {
+        if(todoItems){
+            localStorage.setItem('todos',JSON.stringify(todoItems));
+        }
+    }, [todoItems]);
 
   return (
       <div className="flex flex-col gap-y-5 mt-16">
@@ -36,7 +42,7 @@ const [todoItems, setTodoItems] = useState<Todo[]>([])
           <div >
             <Todos todos={todoItems} updateTodo={updateTodo} cleaCompleted={cleaCompleted} setTodos={setTodoItems}/>
           </div>
-          <div className="my-4 text-center dark:text-veryDarkGrayishBlueDarker  text-veryDarkGrayishBlueDarker">
+          <div className="text-sm text-center dark:text-veryDarkGrayishBlueDarker  text-veryDarkGrayishBlueDarker">
               Drag and drop to reorder list
           </div>
       </div>
