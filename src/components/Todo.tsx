@@ -18,10 +18,12 @@ const TodoItem:React.FC<TodoItemProps> = ({todo, toggleTodo}) => {
     const style: CSSProperties = {
         zIndex: isDragging ? 1 : 'auto',
         transform: CSS.Translate.toString(transform),
-        border: isDragging ?  '1px solid #94a3b8': undefined,
+        border: isDragging ?  '1px solid #cbd5e1': undefined,
         borderRadius: isDragging ? '5px' : undefined,
         padding: isDragging ? "1rem": undefined,
-    };
+        boxShadow: isDragging ? "10px 10px 10px #94a3b8" : undefined,
+
+};
     return (
         <div
             ref={setNodeRef} style={style ? style : undefined} {...attributes} {...listeners}
