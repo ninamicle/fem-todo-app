@@ -22,6 +22,10 @@ function App() {
         const updatedTodos = todoItems.filter(todo => !todo.completed);
         setTodoItems(updatedTodos);
     }
+    const deleteTodo= (id: string) => {
+        const updatedTodos = todoItems.filter(todo => todo.id   === id);
+        setTodoItems(updatedTodos);
+    }
     useEffect(() => {
         if(todoItems){
             localStorage.setItem('todos',JSON.stringify(todoItems));
@@ -40,7 +44,7 @@ function App() {
               <AddTodo createTodo={(text)=>addTodo(text)}/>
           </div>
           <div >
-            <Todos todos={todoItems} updateTodo={updateTodo} cleaCompleted={cleaCompleted} setTodos={setTodoItems}/>
+            <Todos todos={todoItems} updateTodo={updateTodo} cleaCompleted={cleaCompleted} setTodos={setTodoItems} deleteTodo={(id)=> deleteTodo(id)}/>
           </div>
           <div className="text-sm text-center dark:text-veryDarkGrayishBlueDarker  text-veryDarkGrayishBlueDarker">
               Drag and drop to reorder list

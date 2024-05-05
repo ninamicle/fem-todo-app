@@ -17,10 +17,11 @@ import useWindowDimensions from "../hooks/useWindowDimensions.ts";
 interface TodosProps{
     todos: Todo[];
     updateTodo: (todo: Todo) => void;
+    deleteTodo: (id: string) => void;
     setTodos: (todo: Todo[]) => void;
     cleaCompleted: () => void;
 }
-const Todos: React.FC<TodosProps> =({todos, updateTodo, cleaCompleted, setTodos}) => {
+const Todos: React.FC<TodosProps> =({todos, updateTodo, deleteTodo, cleaCompleted, setTodos}) => {
     const [todoItems, setTodoItems] = useState<Todo[]>(todos)
     const [activeStatus, setActiveStatus] = useState<"all" | "active" | "completed">("all")
     const {width} = useWindowDimensions();
@@ -60,7 +61,7 @@ const Todos: React.FC<TodosProps> =({todos, updateTodo, cleaCompleted, setTodos}
                         {todoItems.map((todoItem, index) =>
                             <div key={todoItem.id}
                                  className="flex gap-4 bg-veryLightGray dark:bg-veryDarkDesaturatedBlueDark  first:rounded-t-md border-b dark:border-b-veryDarkGrayishBlueDarker border-b-lightGrayishBlue last:border-none p-6 touch-none">
-                                <TodoItem index={index} todo={todoItem} toggleTodo={(toggle) => toggleTodo(toggle)}/>
+                                <TodoItem index={index} todo={todoItem} toggleTodo={(toggle) => toggleTodo(toggle)} deleteTodo={deleteTodo}/>
                             </div>
                         )}
                     </div>

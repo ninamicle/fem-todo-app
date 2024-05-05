@@ -8,9 +8,10 @@ import checkImg from "/icon-check.svg"
 interface TodoItemProps{
     todo: Todo;
     toggleTodo: (id: string) => void;
+    deleteTodo: (id: string) => void;
     index: number;
 }
-const TodoItem:React.FC<TodoItemProps> = ({todo, toggleTodo}) => {
+const TodoItem:React.FC<TodoItemProps> = ({todo, toggleTodo, deleteTodo}) => {
     const { attributes, listeners, setNodeRef, transform,isDragging } = useSortable({
         id: todo.id
     });
@@ -44,7 +45,11 @@ const TodoItem:React.FC<TodoItemProps> = ({todo, toggleTodo}) => {
                     </div>
                 }
             </div>
-            <div className={`font-normal ${todo.completed ? 'line-through text-veryDarkGrayishBlueDarker' : ''}`}>{todo.text}</div>
+            <div className="w-full flex justify-between">
+                <div className={`font-normal ${todo.completed ? 'line-through text-veryDarkGrayishBlueDarker' : ''}`}>{todo.text}</div>
+                <div className="text-veryDarkGrayishBlueDarker text-lg justify-self-end font-light" onClick={()=> deleteTodo(todo.id)}>X</div>
+            </div>
+
         </div>
     )
 }
