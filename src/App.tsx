@@ -6,8 +6,8 @@ import Todos from "./components/Todos.tsx";
 import {useEffect, useState} from "react";
 
 function App() {
-    const todos =JSON.parse(localStorage.todos);
-    const [todoItems, setTodoItems] = useState<Todo[]>(todos as unknown as Todo[])
+    const todos = localStorage.todos && JSON.parse(localStorage.todos);
+    const [todoItems, setTodoItems] = useState<Todo[]>(todos as unknown as Todo[] ?? [])
     const addTodo =(text: string) => {
         setTodoItems([{id: new Date().toTimeString(), text: text, completed: false }, ...todoItems])
     }
