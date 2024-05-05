@@ -59,7 +59,7 @@ const Todos: React.FC<TodosProps> =({todos, updateTodo, cleaCompleted, setTodos}
                     <div className={`${todoItems.length > 4 ? 'h-[45vh]' : 'h-auto'} overflow-y-scroll no-scrollbar`}>
                         {todoItems.map((todoItem, index) =>
                             <div key={todoItem.id}
-                                 className="flex gap-4 bg-veryLightGray dark:bg-veryDarkDesaturatedBlueDark  first:rounded-t-md border-b dark:border-b-veryDarkGrayishBlueDarker border-b-lightGrayishBlue last:border-none p-6">
+                                 className="flex gap-4 bg-veryLightGray dark:bg-veryDarkDesaturatedBlueDark  first:rounded-t-md border-b dark:border-b-veryDarkGrayishBlueDarker border-b-lightGrayishBlue last:border-none p-6 touch-none">
                                 <TodoItem index={index} todo={todoItem} toggleTodo={(toggle) => toggleTodo(toggle)}/>
                             </div>
                         )}
