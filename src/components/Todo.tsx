@@ -21,7 +21,7 @@ const TodoItem:React.FC<TodoItemProps> = ({todo, toggleTodo}) => {
         border: isDragging ?  '1px solid #cbd5e1': undefined,
         borderRadius: isDragging ? '5px' : undefined,
         padding: isDragging ? "1rem": undefined,
-        boxShadow: isDragging ? "10px 10px 10px #94a3b8" : undefined,
+        boxShadow: isDragging ? "2px 2px 5px #475569" : undefined,
 
 };
     return (
