@@ -34,7 +34,10 @@ const Todos: React.FC<TodosProps> =({todos, updateTodo, cleaCompleted, setTodos}
             distance: 0.1
         }
     });
-    const touchSensor = useSensor(TouchSensor);
+    const touchSensor = useSensor(TouchSensor, {activationConstraint: {
+            delay: 250,
+            tolerance: 5,
+        },});
     const keyboardSensor = useSensor(KeyboardSensor, {coordinateGetter: sortableKeyboardCoordinates})
     const sensors = useSensors(pointerSensor, touchSensor, keyboardSensor)
 
