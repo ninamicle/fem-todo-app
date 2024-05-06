@@ -9,7 +9,7 @@ function App() {
     const todos = localStorage.todos && JSON.parse(localStorage.todos);
     const [todoItems, setTodoItems] = useState<Todo[]>(todos as unknown as Todo[] ?? [])
     const addTodo =(text: string) => {
-        setTodoItems([{id: new Date().toTimeString(), text: text, completed: false }, ...todoItems])
+        setTodoItems([{id: String(Math.random()), text: text, completed: false }, ...todoItems])
     }
     const updateTodo =(updatedTodo:Todo) => {
     const updatedTodos = [...todoItems];
@@ -23,7 +23,7 @@ function App() {
         setTodoItems(updatedTodos);
     }
     const deleteTodo= (id: string) => {
-        const updatedTodos = todoItems.filter(todo => todo.id   === id);
+        const updatedTodos = todoItems.filter(todo => todo.id !== id);
         setTodoItems(updatedTodos);
     }
     useEffect(() => {
