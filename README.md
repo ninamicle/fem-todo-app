@@ -33,9 +33,9 @@ Users should be able to:
 - **Bonus**: Drag and drop to reorder items on the list
 
 ### Screenshot
+![screencapture-todo-trooper-netlify-app-2024-05-05-22_59_45](https://github.com/ninamicle/fem-todo-app/assets/47386569/d422ce12-d392-4037-ac86-f95dfc410d45)
 
-![](./screenshot.jpg)
-
+![screencapture-todo-trooper-netlify-app-2024-05-05-23_00_53](https://github.com/ninamicle/fem-todo-app/assets/47386569/5af668cf-9ee5-412f-8054-ebacd2b3ff1f)
 
 
 ### Links
